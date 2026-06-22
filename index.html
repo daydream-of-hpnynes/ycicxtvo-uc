@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 1 Month ❤️</title>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    background:linear-gradient(to bottom,#6b4226,#d2b48c);
+    font-family:'Arial',sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+    color:white;
+}
+
+.container{
+    z-index:10;
+    max-width:700px;
+    padding:20px;
+}
+
+h1{
+    font-size:3em;
+    animation:pulse 2s infinite;
+}
+
+p{
+    font-size:1.3em;
+}
+
+.cat{
+    width:220px;
+    border-radius:20px;
+    margin-top:15px;
+    box-shadow:0 0 20px rgba(255,255,255,.3);
+}
+
+.flower{
+    position:absolute;
+    top:-50px;
+    font-size:30px;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.05);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🤎 Happy Aniv 1 Bulan Sayang 🤎</h1>
+    <p>wkwk maaf ya alay :)</p>
+
+    <img class="cat"
+    src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=600"
+    alt="cat">
+
+    <p>
+        makasih udah hadir satu bulan ini 🫶<br>
+        semoga kita bisa terus bikin banyak kenangan lucu bareng ✨
+    </p>
+</div>
+
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8f2f3f8d4.mp3?filename=sweet-piano-ambient-11157.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+for(let i=0;i<80;i++){
+    let flower=document.createElement("div");
+    flower.classList.add("flower");
+    flower.innerHTML=Math.random()>0.5?"🌸":"🤎";
+
+    flower.style.left=Math.random()*100+"vw";
+    flower.style.animationDuration=(5+Math.random()*8)+"s";
+    flower.style.opacity=Math.random();
+
+    document.body.appendChild(flower);
+}
+</script>
+
+</body>
+</html>
