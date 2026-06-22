@@ -3,95 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy 1 Month ❤️</title>
+<title>Untuk Kamu 🤎</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-body{
-    margin:0;
-    overflow:hidden;
-    background:linear-gradient(to bottom,#6b4226,#d2b48c);
-    font-family:'Arial',sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    text-align:center;
-    color:white;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-.container{
-    z-index:10;
-    max-width:700px;
-    padding:20px;
+body{
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#4a2c1d,#7b5e57,#d7c4b2);
+font-family:'Cormorant Garamond',serif;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#fff;
+}
+
+.card{
+width:90%;
+max-width:700px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+padding:40px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 40px rgba(0,0,0,.2);
+z-index:10;
+animation:fadeIn 2s ease;
 }
 
 h1{
-    font-size:3em;
-    animation:pulse 2s infinite;
+font-size:2.8rem;
+margin-bottom:20px;
 }
 
 p{
-    font-size:1.3em;
+font-size:1.4rem;
+line-height:1.7;
 }
 
-.cat{
-    width:220px;
-    border-radius:20px;
-    margin-top:15px;
-    box-shadow:0 0 20px rgba(255,255,255,.3);
+.signature{
+margin-top:25px;
+font-size:1.2rem;
+opacity:.8;
 }
 
 .flower{
-    position:absolute;
-    top:-50px;
-    font-size:30px;
-    animation:fall linear infinite;
+position:absolute;
+top:-10%;
+font-size:22px;
+pointer-events:none;
+animation:fall linear infinite;
 }
 
 @keyframes fall{
-    to{
-        transform:translateY(110vh) rotate(360deg);
-    }
+to{
+transform:translateY(120vh) rotate(360deg);
+}
 }
 
-@keyframes pulse{
-    50%{
-        transform:scale(1.05);
-    }
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.cat{
+position:absolute;
+bottom:20px;
+right:20px;
+font-size:40px;
+opacity:.8;
 }
 </style>
 </head>
+
 <body>
 
-<div class="container">
-    <h1>🤎 Happy Aniv 1 Bulan Sayang 🤎</h1>
-    <p>wkwk maaf ya alay :)</p>
+<div class="card">
 
-    <img class="cat"
-    src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=600"
-    alt="cat">
+<h1>Untuk Kamu 🤎</h1>
 
-    <p>
-        makasih udah hadir satu bulan ini 🫶<br>
-        semoga kita bisa terus bikin banyak kenangan lucu bareng ✨
-    </p>
+<p>
+selamat 1 bulan.
+<br><br>
+
+terima kasih sudah tidak menyerah menghadapi manusia aneh bernama aku.
+<br><br>
+
+hadiah terbesar bulan ini adalah kita masih di sini.
+<br><br>
+
+semoga bulan depan masih bisa saling mengganggu satu sama lain.
+</p>
+
+<div class="signature">
+— dari orang yang kadang nyebelin :)
 </div>
 
-<audio autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8f2f3f8d4.mp3?filename=sweet-piano-ambient-11157.mp3" type="audio/mpeg">
+</div>
+
+<div class="cat">🐈</div>
+
+<audio id="music" autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8f2f3f8d4.mp3?filename=sweet-piano-ambient-11157.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-for(let i=0;i<80;i++){
-    let flower=document.createElement("div");
-    flower.classList.add("flower");
-    flower.innerHTML=Math.random()>0.5?"🌸":"🤎";
 
-    flower.style.left=Math.random()*100+"vw";
-    flower.style.animationDuration=(5+Math.random()*8)+"s";
-    flower.style.opacity=Math.random();
+// bunga jatuh
+for(let i=0;i<35;i++){
+let flower=document.createElement('div');
+flower.classList.add('flower');
 
-    document.body.appendChild(flower);
+const flowers=['🌸','🤎','🍂'];
+
+flower.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
+
+flower.style.left=Math.random()*100+'vw';
+flower.style.animationDuration=(8+Math.random()*10)+'s';
+flower.style.opacity=Math.random();
+
+document.body.appendChild(flower);
+}
+
+// coba autoplay musik
+window.onload=()=>{
+document.getElementById('music').play().catch(()=>{});
 }
 </script>
 
